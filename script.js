@@ -2,7 +2,8 @@ class BMIAnimationController {
     constructor() {
         this.currentScene = 0;
         this.totalScenes = 7;
-        this.sceneDuration = 4000;
+        this.defaultDuration = 4000;
+        this.welcomeDuration = 10000;
         this.timer = null;
 
         this.scenes = document.querySelectorAll('.scene');
@@ -69,9 +70,10 @@ class BMIAnimationController {
         if (this.timer) {
             clearTimeout(this.timer);
         }
+        const duration = this.currentScene === 0 ? this.welcomeDuration : this.defaultDuration;
         this.timer = setTimeout(() => {
             this.nextScene();
-        }, this.sceneDuration);
+        }, duration);
     }
 }
 
