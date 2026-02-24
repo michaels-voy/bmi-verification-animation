@@ -1,7 +1,7 @@
 class BMIAnimationController {
     constructor() {
-        this.currentScene = 1;
-        this.totalScenes = 6;
+        this.currentScene = 0;
+        this.totalScenes = 7;
         this.sceneDuration = 4000;
         this.timer = null;
 
@@ -13,7 +13,7 @@ class BMIAnimationController {
     }
 
     init() {
-        this.showScene(1);
+        this.showScene(0);
         this.startAutoPlay();
     }
 
@@ -42,7 +42,7 @@ class BMIAnimationController {
 
     updateProgress() {
         this.progressDots.forEach((dot, index) => {
-            const sceneNum = index + 1;
+            const sceneNum = index;
             dot.classList.remove('active', 'completed');
             
             if (sceneNum === this.currentScene) {
@@ -52,15 +52,15 @@ class BMIAnimationController {
             }
         });
 
-        const progressPercent = ((this.currentScene - 1) / (this.totalScenes - 1)) * 100;
+        const progressPercent = (this.currentScene / (this.totalScenes - 1)) * 100;
         this.progressFill.style.width = `${progressPercent}%`;
     }
 
     nextScene() {
-        if (this.currentScene < this.totalScenes) {
+        if (this.currentScene < this.totalScenes - 1) {
             this.showScene(this.currentScene + 1);
         } else {
-            this.showScene(1);
+            this.showScene(0);
         }
         this.startAutoPlay();
     }

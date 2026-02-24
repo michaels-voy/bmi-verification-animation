@@ -120,6 +120,50 @@ body {
     line-height: 1.5;
 }
 
+/* Scene 0: Welcome */
+.welcome-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.welcome-logo {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    opacity: 0;
+}
+
+.welcome-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    opacity: 0;
+}
+
+.scene.active .welcome-logo {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.scene.active .welcome-text {
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Scene 1: Get Ready */
 .icon-group {
     display: flex;
