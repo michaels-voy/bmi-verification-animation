@@ -572,14 +572,8 @@ body {
     border-radius: 50%;
     background: var(--text-light);
     border: none;
-    cursor: pointer;
     transition: all 0.3s ease;
     padding: 0;
-}
-
-.progress-dot:hover {
-    background: var(--primary-light);
-    transform: scale(1.2);
 }
 
 .progress-dot.active {
@@ -605,55 +599,6 @@ body {
     transition: width 0.3s ease;
 }
 
-/* Controls */
-.controls {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    padding: 16px 24px 24px;
-    background: var(--background-alt);
-}
-
-.control-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: none;
-    background: var(--surface);
-    color: var(--primary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
-}
-
-.control-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.control-btn:active {
-    transform: scale(0.95);
-}
-
-.control-btn svg {
-    width: 24px;
-    height: 24px;
-}
-
-.play-pause .icon-play {
-    display: none;
-}
-
-.play-pause.paused .icon-pause {
-    display: none;
-}
-
-.play-pause.paused .icon-play {
-    display: block;
-}
 
 /* Responsive Design */
 @media (max-width: 480px) {
